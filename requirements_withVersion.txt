@@ -159,3 +159,4 @@ xlrd==1.2.0
 xxhash==3.3.0
 yarl==1.9.2
 zipp==3.17.0
+tensorflow
