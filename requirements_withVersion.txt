@@ -161,4 +161,3 @@ xlrd==1.2.0
 xxhash==3.3.0
 yarl==1.9.2
 zipp==3.17.0
-optuna @ git+https://github.com/optuna/optuna@d845f47b8b2ee93568b380c760be66cb71b0d2f8

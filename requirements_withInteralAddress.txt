@@ -18,7 +18,7 @@ prompt-toolkit @ file:///C:/b/abs_6coz5_9f2s/croot/prompt-toolkit_1672387908312/
 psutil @ file:///C:/Windows/Temp/abs_b2c2fd7f-9fd5-4756-95ea-8aed74d0039flsd9qufz/croots/recipe/psutil_1656431277748/work
 pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
 Pygments @ file:///C:/b/abs_fay9dpq4n_/croot/pygments_1684279990574/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+python-dateutil @ file:///tmp/build/8075s4af9/python-dateutil_1626374649649/work
 pyzmq @ file:///C:/b/abs_655zk4a3s8/croot/pyzmq_1686601465034/work
 six @ file:///tmp/build/80754af9/six_1644875935023/work
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
@@ -28,3 +28,4 @@ wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
 ipykernel @ file:///C:/b/abs_07rkft_vaz/croot/ipykernel_1691121700587/work
 ipython @ file:///C:/b/abs_e5729i179y/croot/ipython_1694181400005/work
 asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
+optuna @ git+https://github.com/optuna/optuna@d845f47b8b2ee93568b380c760be66cb71b0d2f8
