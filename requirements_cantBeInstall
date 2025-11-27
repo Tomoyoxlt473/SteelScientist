@@ -1,0 +1,2 @@
+pywin32==305.1
+torchaudio==2.1.0+cu118
