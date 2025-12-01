@@ -47,7 +47,7 @@ import torch
 from torch import nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, IterableDataset, TensorDataset
-from torch.utils.tensorboard import SummaryWriter
+from torch.utils.tensorboard.writer import SummaryWriter
 ############### sklearn ###############
 
 from datasets import Dataset
@@ -119,7 +119,8 @@ def set_global_seed(seed=123):
     else:
         tf.random.set_seed(seed)
         tf.experimental.numpy.random.seed(seed)
-        tf.set_random_seed(seed)
+        #duplicate for older versions of TensorFlow
+        #tf.set_random_seed(seed)
         # When running on the CuDNN backend, two further options must be set
         os.environ['TF_CUDNN_DETERMINISTIC'] = '1'
         os.environ['TF_DETERMINISTIC_OPS'] = '1'
@@ -220,7 +221,7 @@ def load_data(label='train_data', pred_prop='Yield_value', fes=['com', 'text_emb
     perplexity
         perplexity of composition TSNE method        
     """
-    data_origin = pd.read_excel(f'./datasets/{label}.xlsx')    
+    data_origin = pd.read_excel(f'/root/code/SteelScientist/{label}.xlsx')    
     com_cols = set(data_origin.columns[17:-4])
 
     if label=='train_data':
@@ -1182,19 +1183,22 @@ if __name__=='__main__':
     # model_name = 'bert-base-uncased'
     # model_name = 'microsoft/deberta-v3-base'
     # model_name = 'm3rg-iitd/matscibert'
-    model_name = './../model_saved/checkpoint-140000'
+    # there is no such file or directory and i can't revover it from git
+    # usr huggingface to download pretrained model again
+    model_name = 'MGE-LLMs/SteelBERT'
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModel.from_pretrained(model_name).to(device)
 
     ###################  setting parameters  ###################
-    # for prop in ['Yield_value', 'Tensile_value', 'Elongation_value']:
-    for prop in ['Elongation_value']:
+    for prop in ['Yield_value', 'Tensile_value', 'Elongation_value']:
+    #for create a csv file recording all results but we do have the parameters
+    #for prop in ['Elongation_value']:
         # add parameters names in output files
-        with open('./outputs/reg_model.csv', 'a+') as csvfile:
+    #    with open('./outputs/reg_model.csv', 'a+') as csvfile:
             # creating a csv writer object
-            csvwriter = csv.writer(csvfile)
-            csvwriter.writerow(['prop', 'train_r2', 'best_val_r2', 'best_new_text_r2','best_exp_r2',
-                'seed', 'split_ratio', 'perplexity', 'train_batch', 'epoch', 'lr', 'step', 'gamma_ratio'])
+    #        csvwriter = csv.writer(csvfile)
+    #        csvwriter.writerow(['prop', 'train_r2', 'best_val_r2', 'best_new_text_r2','best_exp_r2',
+    #            'seed', 'split_ratio', 'perplexity', 'train_batch', 'epoch', 'lr', 'step', 'gamma_ratio'])
             
 
             
